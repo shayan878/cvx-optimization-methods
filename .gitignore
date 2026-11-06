@@ -1,0 +1,16 @@
+# MATLAB
+*.asv
+*.m~
+*.mat
+slprj/
+codegen/
+*.mex*
+*.p
+# Editor and operating system
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+# Generated output
+results/
+figures/
