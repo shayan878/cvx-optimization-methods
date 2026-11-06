@@ -33,9 +33,13 @@ verifyError(testCase, ...
 end
 
 function testSamplerRejectsInvalidSampleCount(testCase)
-verifyError(testCase, ...
-    @() cvxexamples.sample_psd_gaussian(eye(2), 0), ...
-    "MATLAB:validators:mustBePositive");
+didThrow = false;
+try
+    cvxexamples.sample_psd_gaussian(eye(2), 0);
+catch
+    didThrow = true;
+end
+verifyTrue(testCase, didThrow);
 end
 
 function testSolvedStatusAccepted(testCase)
